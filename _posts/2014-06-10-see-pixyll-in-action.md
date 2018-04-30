@@ -3,7 +3,6 @@ layout:     post
 title:      Pixyll in Action
 date:       2014-06-10 12:31:19
 summary:    See what the different elements looks like. Your markdown has never looked better. I promise.
-categories: jekyll pixyll
 ---
 
 There is a significant amount of subtle, yet precisely calibrated, styling to ensure
@@ -40,7 +39,9 @@ end
 {% endhighlight %}
 
 Here's some CSS:
-
+{%highlight python%}
+import
+{%endhighlight%}
 {% highlight css %}
 .foobar {
   /* Named colors rule */
@@ -130,6 +131,6 @@ or add, features.
 
 Happy writing.
 
----
+<hr>
 
 [^1]: Important information that may distract from the main text can go in footnotes.
