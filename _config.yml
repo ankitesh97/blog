@@ -68,12 +68,12 @@ telegram_username:
 vk_id:
 
 # Post sharing icons
-show_sharing_icons: false
+show_sharing_icons: true
 # Change to 'true' to enable individual icons
 share_facebook: true
-share_twitter: false
+share_twitter: true
 share_googleplus: false
-share_linkedin: false
+share_linkedin: true
 share_digg: false
 share_tumblr: false
 share_reddit: false
@@ -117,7 +117,7 @@ text:
 markdown:     kramdown
 permalink:    pretty
 extensions: ['smart', 'tables', 'with_toc_data']
-
+highlighter: rouge
 kramdown:
   input: GFM
   auto_ids: true
