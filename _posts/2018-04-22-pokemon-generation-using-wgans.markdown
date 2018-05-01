@@ -2,7 +2,7 @@
 layout: post
 title: "Pokemon Generation using WGans"
 date: "2018-04-22 02:18:47 +0530"
-summary: Implementation of Wgan in tensorflow to generate new pokemons.
+summary: An application based tutorial of Gan (Generative adversarial network). This post aims to generate new pokemon images using the power of WGan. The code is written in python using Google's tensorflow as the deep-learning library
 ---
 
 Generative adversarial network(GAN) is an awesome technique to generate new data which follows the same distribution as that of training data. I won't repeat same stuff that you can find on other blogs, this post basically aims to implement an application that uses gans. I will link a post below to learn general gan
@@ -18,7 +18,7 @@ Wgan is just a vanilla Gan but with a better loss function, it uses Wasserstein 
 
 So below is the algorithm from the [original](https://arxiv.org/abs/1701.07875) paper, let's look at the whole process as we are going to code it.
 
-![alt text]({{ site.url }}/images/assets_pokemonGeneration/wgan_algo.jpg)
+![alt text](/images/assets_pokemonGeneration/wgan_algo.jpg)
 
 For the 1st part of the algorithm, the discriminator is getting trained, a for loop is there because discriminator should get more training than the generator, this is how the algo flow goes
 
@@ -37,7 +37,7 @@ Enough of theory already! Let's build the application
 
 Let's first talk about the whole architecture and then as we proceed further, other parts will be revealed along with the code. Below is the whole architecture, first we feed some random input of random dimension the generator which then gives a fake image. This fake image is fed to the discriminator along with the real image, using it's output the discriminator and the generator both get trained and over time real looking images are produced.
 
-![alt text]({{ site.url }}/images/assets_pokemonGeneration/gan_architecture.png)
+![alt text](/images/assets_pokemonGeneration/gan_architecture.png)
 
 
 <br>
@@ -55,8 +55,8 @@ Let's start coding
 
 First, have a look at the dataset, the dataset consists of total 819 pokemons of dimension 128x128, which were then augmented to make a dataset of size 8190. You can download the original dataset from [here](https://www.kaggle.com/ankitesh97/pokemon-images/). Below are some of the images from the dataset.
 
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;![alt text]({{ site.url }}/images/assets_pokemonGeneration/149.jpg)  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;![alt text]({{ site.url }}/images/assets_pokemonGeneration/229-mega.jpg)
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;![alt text]({{ site.url }}/images/assets_pokemonGeneration/25.jpg)  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;![alt text](/images/assets_pokemonGeneration/149.jpg)  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;![alt text](/images/assets_pokemonGeneration/229-mega.jpg)
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;![alt text](/images/assets_pokemonGeneration/25.jpg)  
 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Dragonite &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Mega Houndoom &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Pikachu
 
@@ -463,10 +463,10 @@ Below are some of the generated images, although they are not that precise and r
 
 These were generated after 1000 epochs  
 
-![alt text]({{ site.url }}/images/assets_pokemonGeneration/0.jpg)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-![alt text]({{ site.url }}/images/assets_pokemonGeneration/176.jpg)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-![alt text]({{ site.url }}/images/assets_pokemonGeneration/178.jpg)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-![alt text]({{ site.url }}/images/assets_pokemonGeneration/2854.jpg)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+![alt text](/images/assets_pokemonGeneration/0.jpg)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+![alt text](/images/assets_pokemonGeneration/176.jpg)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+![alt text](/images/assets_pokemonGeneration/178.jpg)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+![alt text](/images/assets_pokemonGeneration/2854.jpg)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 
 
 ## Conclusion
