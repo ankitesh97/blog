@@ -18,7 +18,7 @@ Wgan is just a vanilla Gan but with a better loss function, it uses Wasserstein 
 
 So below is the algorithm from the [original](https://arxiv.org/abs/1701.07875) paper, let's look at the whole process as we are going to code it.
 
-![alt text](/images/assets_pokemonGeneration/wgan_algo.jpg)
+![alt text](blog/images/assets_pokemonGeneration/wgan_algo.jpg)
 
 For the 1st part of the algorithm, the discriminator is getting trained, a for loop is there because discriminator should get more training than the generator, this is how the algo flow goes
 
@@ -37,7 +37,7 @@ Enough of theory already! Let's build the application
 
 Let's first talk about the whole architecture and then as we proceed further, other parts will be revealed along with the code. Below is the whole architecture, first we feed some random input of random dimension the generator which then gives a fake image. This fake image is fed to the discriminator along with the real image, using it's output the discriminator and the generator both get trained and over time real looking images are produced.
 
-![alt text](/images/assets_pokemonGeneration/gan_architecture.png)
+![alt text](blog/images/assets_pokemonGeneration/gan_architecture.png)
 
 
 <br>
@@ -48,21 +48,21 @@ This is how the code structured is followed
 * [Discriminator](#discriminator)
 * [Train](#train)
 
-Before we begin the code for this project can be cloned from [this](meragithublink) repo.  
+Before we begin the code for this project can be cloned from [this](https://github.com/ankitesh97/GANS/blob/master/PokemonGenerator) repo.  
 Let's start coding
 ### Data Preprocessing
 
 
 First, have a look at the dataset, the dataset consists of total 819 pokemons of dimension 128x128, which were then augmented to make a dataset of size 8190. You can download the original dataset from [here](https://www.kaggle.com/ankitesh97/pokemon-images/). Below are some of the images from the dataset.
 
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;![alt text](/images/assets_pokemonGeneration/149.jpg)  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;![alt text](/images/assets_pokemonGeneration/229-mega.jpg)
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;![alt text](/images/assets_pokemonGeneration/25.jpg)  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;![alt text](blog/images/assets_pokemonGeneration/149.jpg)  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;![alt text](blog/images/assets_pokemonGeneration/229-mega.jpg)
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;![alt text](blog/images/assets_pokemonGeneration/25.jpg)  
 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Dragonite &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Mega Houndoom &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Pikachu
 
 
 
-The code for augmentation is written in [augment.py](augment,py ka link), I won't go through the whole code but will just mention the crux of it, and the rest is self-explanatory.
+The code for augmentation is written in [augment.py](https://github.com/ankitesh97/GANS/blob/master/PokemonGenerator/augment.py), I won't go through the whole code but will just mention the crux of it, and the rest is self-explanatory.
 
 **augment.py**
 ```python
@@ -463,10 +463,10 @@ Below are some of the generated images, although they are not that precise and r
 
 These were generated after 1000 epochs  
 
-![alt text](/images/assets_pokemonGeneration/0.jpg)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-![alt text](/images/assets_pokemonGeneration/176.jpg)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-![alt text](/images/assets_pokemonGeneration/178.jpg)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-![alt text](/images/assets_pokemonGeneration/2854.jpg)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+![alt text](blog/images/assets_pokemonGeneration/0.jpg)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+![alt text](blog/images/assets_pokemonGeneration/176.jpg)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+![alt text](blog/images/assets_pokemonGeneration/178.jpg)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+![alt text](blog/images/assets_pokemonGeneration/2854.jpg)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 
 
 ## Conclusion
